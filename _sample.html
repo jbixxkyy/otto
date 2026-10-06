@@ -1,0 +1,8 @@
+﻿<!doctype html><meta charset="utf-8"><body><pre id="out">loading</pre>
+<script>
+window.ready=false;
+const img=new Image();
+img.onload=()=>{const c=document.createElement("canvas");c.width=img.naturalWidth;c.height=img.naturalHeight;const x=c.getContext("2d");x.drawImage(img,0,0);window.d=x.getImageData(0,0,c.width,c.height).data;window.W=c.width;window.H=c.height;window.ready=true;document.getElementById("out").textContent="ready "+c.width+"x"+c.height;};
+img.onerror=()=>document.getElementById("out").textContent="ERR";
+img.src="/_sample.png";
+</script></body>

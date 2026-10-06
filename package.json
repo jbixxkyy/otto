@@ -1,0 +1,35 @@
+{
+  "name": "otto",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Otto - ChatGPT-style web app + AI agent that controls a Windows PC and a Linux server (free-tier Gemini via Google ADK)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-public.mjs",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "package": "node scripts/package.mjs"
+  },
+  "dependencies": {
+    "@google/adk": "^2.2.0",
+    "@google/genai": "^2.9.0",
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "express": "^5.2.1",
+    "ws": "^8.18.0"
+  },
+  "optionalDependencies": {
+    "@nut-tree/nut-js": "^4.2.0",
+    "screenshot-desktop": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
